@@ -39,6 +39,9 @@ cp "${BIN_PATH}" "${MACOS_DIR}/${APP_NAME}"
 chmod 755 "${MACOS_DIR}/${APP_NAME}"
 
 cp "${PROJECT_DIR}/Resources/Info.plist" "${CONTENTS_DIR}/Info.plist"
+if [ -f "${PROJECT_DIR}/Resources/AppIcon.icns" ]; then
+    cp "${PROJECT_DIR}/Resources/AppIcon.icns" "${RESOURCES_DIR}/AppIcon.icns"
+fi
 echo "APPL????" > "${CONTENTS_DIR}/PkgInfo"
 
 # 4. Ad-hoc Code Signing
